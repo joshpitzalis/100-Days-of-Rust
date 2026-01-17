@@ -6,7 +6,7 @@ fn main() {
     // access the command line
     let args: Vec<String> = env::args().collect();
     if args.len() != 2 {
-        println!("X Usage: Cargo run <file_path>");
+        println!("X Usage: Cargo run <src/file_name>");
         return;
     }
     let file_path = &args[1];
