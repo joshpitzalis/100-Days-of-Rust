@@ -1,4 +1,4 @@
-use std::{io, string};
+use std::io;
 
 fn main() {
     println!("Palindrone Checker");
