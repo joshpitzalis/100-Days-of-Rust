@@ -1,5 +1,5 @@
 use std::io;
-// use std::io::Write;
+use std::io::Write;
 use std::thread;
 use std::time::Duration;
 
@@ -43,10 +43,34 @@ fn start_timer(duration: (u64, u64, u64)) {
         let hrs = i / 3600;
         let mins = (i % 3600) / 60;
         let secs = i % 60;
-
-        println!("Time remaining: {:02}:{:02}:{:02}", hrs, mins, secs);
-        // io::stdout().flush().unwrap();
+        print!("Time remaining: {:02}:{:02}:{:02}", hrs, mins, secs);
+        io::stdout().flush().unwrap();
         thread::sleep(Duration::from_secs(1));
     }
     println!()
 }
+
+// Why is flushing needed?
+
+// Standard output is typically **line-buffered**, meaning:
+// - Output is automatically flushed when a newline (`\n`) is encountered
+// - Output may be held in a buffer until the buffer is full or the program ends
+
+// This becomes important when you want to display output immediately, especially for:
+// - Progress indicators
+// - Prompts that don't end with newlines
+// - Real-time status updates
+
+// Without the `flush()` call, "Time remaining: " might not appear every second, making the program seem unresponsive.
+//
+// In this scenario you likely won't notice much difference because the **`println!` macro already includes a newline character** (`\n`), which automatically triggers a flush.
+//
+// However, there are some scenarios where removing `flush()` could cause issues:
+//
+// 1. **Terminal buffering policies**: Some terminals or environments might use full buffering instead of line buffering, especially when output is redirected to a file
+//
+// 2. **System under load**: Heavy system load might delay automatic flushing
+//
+// 3. **Different platforms**: Buffering behavior can vary between operating systems
+//
+// You can replace  println! with  print! and uncomment the flush line to break things. Without the flush you won't see the count down at all until the timer completes.
