@@ -11,3 +11,4 @@
  - Day 9 - [Prime Number Checker](https://youtu.be/BFsNXzWVzIg)
  - Day 10 - [Todo List](https://youtu.be/iJOtQV5nYGg)
  - Day 11 - [Timer](https://youtu.be/3ru5YzF4W4Y)
+ - Day 12 - [Rock Paper Scissors](https://youtu.be/VhDVs_GyimM)
