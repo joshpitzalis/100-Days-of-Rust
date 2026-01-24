@@ -1,4 +1,3 @@
-// cargo add serde_json
 use serde_json::Value;
 use std::env;
 use std::fs;
@@ -23,22 +22,3 @@ fn main() {
         Err(e) => eprintln!("❌ Failed to read file: {}", e),
     }
 }
-
-// // HTTP APIs, WebSockets, or any network communication:
-// // rust// Sending API response
-// let response = ApiResponse { status: "success", data: user };
-// let json_string = serde_json::to_string(&response)?;
-// // Send this string via HTTP, WebSocket, etc.
-// Just like in TypeScript when you do fetch(url, { body: JSON.stringify(data) })
-
-// // Logging/Debugging
-// Pretty-printing complex structs for inspection:
-
-// rustprintln!("{}", serde_json::to_string_pretty(&complex_data)?);
-
-// // Storing in Databases
-// Many databases (Postgres JSONB, MongoDB, etc.) accept JSON strings:
-
-// let metadata = UserMetadata { preferences: ... };
-// let json = serde_json::to_string(&metadata)?;
-// db.execute("INSERT INTO users (metadata) VALUES (?)", &json)?;
