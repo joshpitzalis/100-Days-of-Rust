@@ -1,0 +1,3 @@
+Borrow checker guards
+Memory safe, no segfaults
+Compile time brings peace

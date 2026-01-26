@@ -22,3 +22,6 @@ fn main() {
         Err(e) => eprintln!("❌ Failed to read file: {}", e),
     }
 }
+
+// Ok... how do you pronounce serde?
+// https://www.reddit.com/r/rust/comments/p3qsbc/ok_how_do_you_pronounce_serde/
