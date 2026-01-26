@@ -7,13 +7,13 @@ It's written for people who have finished reading ["the book"](https://rust-book
  
 Here's an excerpt:
  
-> *"Choose a problem you want to solve.*
+> "Choose a problem you want to solve.*
 > 
 > *Let the problem drive the introduction of new concepts and techniques.*
 > 
 > *It flips the hierarchy you are used to: the material you are studying is not relevant because somebody claims it is, it is relevant because it is useful to get closer to a solution.*
 > 
-> *You learn new techniques and when it makes sense to reach for them."*
+> You learn new techniques and when it makes sense to reach for them."*
  
 The book focuses on how to build an email newsletter from scratch. Specifically goes through the challenges of writing cloud-native applications in a team of four or five engineers with different levels of experience and proficiency.
  
@@ -40,4 +40,4 @@ Sadly, he only made 12 videos and then gave up. The remaining 78 projects are ju
  - Day 11 - [Timer](https://youtu.be/3ru5YzF4W4Y)
  - Day 12 - [Rock Paper Scissors](https://youtu.be/VhDVs_GyimM)
  - Day 13 - [JSON Parser](https://youtu.be/BbprNC1zHho)
- - Day 14 - [File Reader]()
+ - Day 14 - [File Reader](https://youtu.be/qdzfrkILYYI)
