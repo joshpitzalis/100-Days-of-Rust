@@ -7,13 +7,13 @@ It's written for people who have finished reading ["the book"](https://rust-book
  
 Here's an excerpt:
  
-> "Choose a problem you want to solve.*
+> "Choose a problem you want to solve.
 > 
-> *Let the problem drive the introduction of new concepts and techniques.*
+> Let the problem drive the introduction of new concepts and techniques.
 > 
-> *It flips the hierarchy you are used to: the material you are studying is not relevant because somebody claims it is, it is relevant because it is useful to get closer to a solution.*
+> It flips the hierarchy you are used to: the material you are studying is not relevant because somebody claims it is, it is relevant because it is useful to get closer to a solution.*
 > 
-> You learn new techniques and when it makes sense to reach for them."*
+> You learn new techniques and when it makes sense to reach for them."
  
 The book focuses on how to build an email newsletter from scratch. Specifically goes through the challenges of writing cloud-native applications in a team of four or five engineers with different levels of experience and proficiency.
  

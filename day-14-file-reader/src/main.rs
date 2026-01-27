@@ -19,6 +19,15 @@ fn main() {
         None
     };
 
+    // // this is the same as saying
+    //
+    // let pos = args.iter().position(|x| x == "--search");
+    //
+    // let keyword = match pos {
+    //     Some(pos) => args.get(pos + 1),
+    //     None => None,
+    // };
+
     println!("{:?}", keyword);
 
     let file = match File::open(file_path) {
