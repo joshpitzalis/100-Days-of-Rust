@@ -41,3 +41,4 @@ Sadly, he only made 12 videos and then gave up. The remaining 78 projects are ju
  - Day 12 - [Rock Paper Scissors](https://youtu.be/VhDVs_GyimM)
  - Day 13 - [JSON Parser](https://youtu.be/BbprNC1zHho)
  - Day 14 - [File Reader](https://youtu.be/qdzfrkILYYI)
+ - Day 15 - [Memory Management](https://youtu.be/z3-PsKQ9QYs)
