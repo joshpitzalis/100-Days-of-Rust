@@ -61,7 +61,7 @@ struct Args {
 
 fn main() {
     let args = Args::parse();
-    dbg!(&args);
+    // dbg!(&args);
 
     if !args.output_dir.exists() {
         let mut cmd = Args::command();
@@ -73,7 +73,7 @@ fn main() {
     }
 
     let post_slug = slug::slugify(args.title.clone());
-    dbg!(&post_slug);
+    // dbg!(&post_slug);
     // let filename = format!("{}/{}.md", args.output_dir, args.title);
     let mut filename = args.output_dir.join(args.title.clone());
     filename.set_extension("md");
@@ -87,7 +87,8 @@ fn main() {
         slug: post_slug.clone(),
     };
     // println!("Creating file: {}...", filename.display());
-    println!("Creating file: {}...", post_slug.clone());
+    // println!("Creating file: {}...", post_slug.clone());
+
     // fs::write(filename, args.title).expect("Failed to create file");
 
     let yaml = serde_yaml::to_string(&frontmatter).expect("Failed to serialize frontmatter");
