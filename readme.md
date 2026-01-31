@@ -1,31 +1,11 @@
  # Rust for TypeScript Devs 
  ## 100 Projects in 100 Days
- 
-It tried learning rust by reading [Zero To Production](https://www.zero2prod.com) by Luca Palmieri.
- 
-It's written for people who have finished reading ["the book"](https://rust-book.cs.brown.edu/) and want to start applying everything to something a bit more meaty.
- 
-Here's an excerpt:
- 
-> "Choose a problem you want to solve.
-> 
-> Let the problem drive the introduction of new concepts and techniques.
-> 
-> It flips the hierarchy you are used to: the material you are studying is not relevant because somebody claims it is, it is relevant because it is useful to get closer to a solution.*
-> 
-> You learn new techniques and when it makes sense to reach for them."
- 
-The book focuses on how to build an email newsletter from scratch. Specifically goes through the challenges of writing cloud-native applications in a team of four or five engineers with different levels of experience and proficiency.
- 
-I love like this problem-based approach to learning. 
- 
-The only problem is, at the moment, I'm struggling to find the time. I keep starting and stopping the zero book. I would much prefer to sit down with it for a week and finish the whole thing in one continuous sprint. Since that cannot happen right now, I've resorted to build something super simple each day to keep things from stalling.
- 
-The key is that each build is basic enough that I can finish it in about 20 minutes. This way, I can make progress with the time I realistically have and continue to cross off concepts on the [Rust roadmap](https://roadmap.sh/rust) each day.
-  
-I found this wicked [Rust Bootcamp on Udemy](https://www.udemy.com/course/rust-programming-bootcamp) by Vivian Aranha that involves building 100 rust projects.
 
-Sadly, he only made 12 videos and then gave up. The remaining 78 projects are just text files. I thought I could pick up where he left off and try finishing the remaining explainer videos. Since I come from a typescript background, the majority of my understanding will come from translating typescript concepts over.
+I'm struggling to find the time to learn Rust at the moment. Instead of giving up entirely, I try and build something super simple each day to the momentum going.
+ 
+Each day's project is basic enough that I can finish it in about 30 minutes.
+  
+I come from a typescript background, so the majority of my understanding will come from translating typescript concepts over.
 
  - Day 1 - [Hello Rust](https://youtu.be/2LZiMnMNhns)
  - Day 2 - [Temperature Converter](https://youtu.be/dkeijLKdskY)
@@ -43,12 +23,13 @@ Sadly, he only made 12 videos and then gave up. The remaining 78 projects are ju
  - Day 14 - [File Reader](https://youtu.be/qdzfrkILYYI)
  - Day 15 - [Memory Management](https://youtu.be/z3-PsKQ9QYs)
  - Day 16 - [String Manipulator](https://youtu.be/iI9MzrkTdnE)
- - Day 17 - [Basic CRUD]()
- - Day 18 - [Banking App]()
- - Day 19 - [Clap]()
- - Day 20 - [Digital Garden]()
+ - Day 17 - Basic CRUD
+ - Day 18 - Banking App
+ - Day 19 - Clap
+ - Day 20 - [Error Calculator](https://youtu.be/jFOy0dbjq7o)
+ - Day 21 - Digital Garden
 
-## Useful resources I found along the way
-- [When starting to learn Rust, focus on structs, vectors, iteration, Result and Option.](https://youtu.be/sDtQaO5_SOw?t=169)
+## Helpful stuff I found along the way
+- [When starting to learn Rust, only focus on structs, vectors, iteration, Result and Option.](https://youtu.be/sDtQaO5_SOw?t=169)
 - [Don't use refernces, copy and clone everything.](https://youtu.be/2hXNd6x9sZs?t=557)
-- [The Rust roadmap, to cross of concepts as yu pick them up](https://roadmap.sh/rust?fl=1)
+- [The Rust roadmap, to cross of concepts as you pick them up](https://roadmap.sh/rust?fl=1)
