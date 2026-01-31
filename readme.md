@@ -44,3 +44,11 @@ Sadly, he only made 12 videos and then gave up. The remaining 78 projects are ju
  - Day 15 - [Memory Management](https://youtu.be/z3-PsKQ9QYs)
  - Day 16 - [String Manipulator](https://youtu.be/iI9MzrkTdnE)
  - Day 17 - [Basic CRUD]()
+ - Day 18 - [Banking App]()
+ - Day 19 - [Clap]()
+ - Day 20 - [Digital Garden]()
+
+## Useful resources I found along the way
+- [When starting to learn Rust, focus on structs, vectors, iteration, Result and Option.](https://youtu.be/sDtQaO5_SOw?t=169)
+- [Don't use refernces, copy and clone everything.](https://youtu.be/2hXNd6x9sZs?t=557)
+- [The Rust roadmap, to cross of concepts as yu pick them up](https://roadmap.sh/rust?fl=1)
