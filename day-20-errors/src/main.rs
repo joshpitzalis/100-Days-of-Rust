@@ -70,7 +70,7 @@ fn main() {
 //                 // `match` on Result to handle both Ok and Err cases
 //                 match parse_two_numbers() {
 //                     Ok((a, b)) => println!("✅ Result: {} + {} = {}", a, b, a + b),
-//                     Err(e) => eprintln!("❌ Error: {}", e),
+//                     Err(e) => eprintln!("❌ The Error is: {}", e),
 //                 }
 //             }
 //             1 => println!("You chose Divide"),
@@ -97,8 +97,8 @@ fn main() {
 //     let b: f64 = Input::<String>::new()
 //         .with_prompt("Enter second number")
 //         .interact_text()
-//         .expect("Failed to read second input")
-//         .parse()?;
+//         .unwrap()
+//         .parse()?
 
 //     Ok((a, b))
 // }
@@ -173,7 +173,7 @@ fn main() {
 //     }
 // }
 
-// - unwrap() => Quick prototyping, you're confident it won't fail
-// - ? => You want to propagate the error up to the caller (no crash)
-// - match => You want to handle both Ok and Err cases explicitly
-// - expect("msg") => You want a clear error message if it panics
+// // - unwrap() => Quick prototyping, you're confident it won't fail
+// // - ? => You want to propagate the error up to the caller (no crash)
+// // - match => You want to handle both Ok and Err cases explicitly
+// // - expect("msg") => You want a clear error message if it panics
