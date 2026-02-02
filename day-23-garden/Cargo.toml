@@ -1,0 +1,7 @@
+[package]
+name = "day-21-garden"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+dialoguer = "0.12.0"
