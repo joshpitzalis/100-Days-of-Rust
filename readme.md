@@ -28,7 +28,7 @@ I come from a typescript background, so the majority of my understanding will co
  - Day 19 - Clap
  - Day 20 - [Error Calculator](https://youtu.be/jFOy0dbjq7o)
  - Day 21 - Custom Error Calculator
- - Day 21 - State Machine
+ - Day 22 - State Machine
  - Day 23 - Digital Garden
 
 ## Helpful stuff I found along the way
