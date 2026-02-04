@@ -1,89 +1,308 @@
-fn main() {
-    println!("Hello, world!");
+// ⛳️ Step 1 - Install dependancies and get everything running
+// cargo add edit owo-colors slug dialoguer directories clap --features clap/derive --features clap/env
+
+use clap::{CommandFactory, Parser, Subcommand, error::ErrorKind};
+use directories::UserDirs;
+use std::path::PathBuf;
+
+#[derive(Parser, Debug, Clone)]
+#[clap(version)]
+struct Args {
+    #[clap(short = 'p', long, env)]
+    garden_path: Option<PathBuf>,
+
+    #[command(subcommand)]
+    cmd: Commands,
+}
+#[derive(Subcommand, Debug, Clone)]
+enum Commands {
+    /// write something in your garden
+    ///
+    /// This command will open your $EDITOR, wait for you
+    /// to write something, and then save the file to your
+    /// garden
+    Write {
+        /// Optionally set a title for what you are going to write about
+        #[clap(short, long)]
+        title: Option<String>,
+    },
 }
 
-// // ⛳️ Step 14 - Custom errors with thiserror and miette
-// // Run: cargo add miette -F fancy
-// // Run: cargo add thiserror tempfile
-// //
-// // `thiserror` generates Error trait implementations from enums.
+/// Get the user's garden directory, which by default
+/// is placed in their home directory
+fn get_default_garden_dir() -> Option<PathBuf> {
+    UserDirs::new().map(|dirs| {
+        dirs.home_dir()
+            .join("Desktop/100-Days-of-Rust/day-24-garden-errors/garden")
+    })
+}
+
+fn main() -> Result<(), std::io::Error> {
+    let args = Args::parse();
+    dbg!(args.clone());
+
+    let Some(garden_path) = args.garden_path.or_else(get_default_garden_dir) else {
+        let mut cmd = Args::command();
+        cmd.error(
+               ErrorKind::ValueValidation,
+               format!(
+                   "garden directory not provided and home directory unavailable for default garden directory"
+               ),
+           )
+           .exit()
+    };
+    if !garden_path.exists() {
+        let mut cmd = Args::command();
+        cmd.error(
+            ErrorKind::ValueValidation,
+            format!(
+                "garden directory `{}` doesn't exist, or is inaccessible",
+                garden_path.display()
+            ),
+        )
+        .exit()
+    };
+
+    dbg!(garden_path.clone());
+    match args.cmd {
+        Commands::Write { title } => day_24_garden_errors::write(garden_path, title),
+    }
+}
+
+// // ⛳️ Step 2 - Turning standard errors into diagnostics
+// // cargo add miette -F miette/fancy
+
 // // `miette` provides beautiful error reporting with context.
-// //
-// // `#[error("...")]` sets the error message.
-// // `#[from]` auto-generates From impl for error conversion.
-// // `#[diagnostic(code(...))]` adds error codes for miette.
-// //
-// // === Create src/lib.rs error type ===
-// // use miette::Diagnostic;
-// // use thiserror::Error;
-// //
-// // #[derive(Error, Diagnostic, Debug)]
-// // pub enum GardenVarietyError {
-// //     #[error(transparent)]
-// //     #[diagnostic(code(garden::io_error))]
-// //     IoError(#[from] std::io::Error),
-// //
-// //     #[error("failed to keep tempfile: {0}")]
-// //     #[diagnostic(code(garden::tempfile_keep_error))]
-// //     TempfileKeepError(#[from] tempfile::PersistError),
-// // }
-// //
-// // // Change write() return type:
-// // pub fn write(...) -> Result<(), GardenVarietyError> {
-// // === end error type ===
-// //
-// // === Update main.rs ===
-// use clap::{error::ErrorKind, CommandFactory, Parser, Subcommand};
+
+// use clap::{CommandFactory, Parser, Subcommand, error::ErrorKind};
 // use directories::UserDirs;
-// use miette::{Context, IntoDiagnostic};
+// use miette::IntoDiagnostic;
 // use std::path::PathBuf;
-//
-// #[derive(Parser, Debug)]
+
+// #[derive(Parser, Debug, Clone)]
 // #[clap(version)]
 // struct Args {
 //     #[clap(short = 'p', long, env)]
 //     garden_path: Option<PathBuf>,
-//
+
 //     #[command(subcommand)]
 //     cmd: Commands,
 // }
-//
-// #[derive(Subcommand, Debug)]
+// #[derive(Subcommand, Debug, Clone)]
 // enum Commands {
+//     /// write something in your garden
+//     ///
+//     /// This command will open your $EDITOR, wait for you
+//     /// to write something, and then save the file to your
+//     /// garden
 //     Write {
+//         /// Optionally set a title for what you are going to write about
 //         #[clap(short, long)]
 //         title: Option<String>,
 //     },
 // }
-//
+
+// /// Get the user's garden directory, which by default
+// /// is placed in their home directory
 // fn get_default_garden_dir() -> Option<PathBuf> {
-//     UserDirs::new().map(|dirs| dirs.home_dir().join("garden"))
+//     UserDirs::new().map(|dirs| {
+//         dirs.home_dir()
+//             .join("Desktop/100-Days-of-Rust/day-24-garden-errors/garden")
+//     })
 // }
-//
-// // miette::Result enables fancy error display
+
+// // fn main() -> Result<(), std::io::Error> {
 // fn main() -> miette::Result<()> {
 //     let args = Args::parse();
-//
+//     dbg!(args.clone());
+
 //     let Some(garden_path) = args.garden_path.or_else(get_default_garden_dir) else {
-//         Args::command()
-//             .error(ErrorKind::ValueValidation, "garden directory not provided")
-//             .exit()
+//         let mut cmd = Args::command();
+//         cmd.error(
+//                ErrorKind::ValueValidation,
+//                format!(
+//                    "garden directory not provided and home directory unavailable for default garden directory"
+//                ),
+//            )
+//            .exit()
 //     };
-//
 //     if !garden_path.exists() {
-//         Args::command()
-//             .error(
-//                 ErrorKind::ValueValidation,
-//                 format!("garden directory `{}` doesn't exist", garden_path.display()),
-//             )
-//             .exit()
+//         let mut cmd = Args::command();
+//         cmd.error(
+//             ErrorKind::ValueValidation,
+//             format!(
+//                 "garden directory `{}` doesn't exist, or is inaccessible",
+//                 garden_path.display()
+//             ),
+//         )
+//         .exit()
 //     };
-//
+
+//     dbg!(garden_path.clone());
 //     match args.cmd {
 //         Commands::Write { title } => {
-//             // wrap_err adds context to errors
-//             garden::write(garden_path, title).wrap_err("garden::write")?;
+//             // day_24_garden_errors::write(garden_path, title)
+//             day_24_garden_errors::write(garden_path, title).into_diagnostic()
 //         }
 //     }
-//     Ok(())
 // }
+
+// // cargo run -- write -t "My New Post"
+// // then delete the temp file manually to see the new error message
+
+// // ⛳️ Step 3 - Building our own errors
+// // cargo add thiserror tempfile
+
+// use clap::{CommandFactory, Parser, Subcommand, error::ErrorKind};
+// use directories::UserDirs;
+// use miette::IntoDiagnostic;
+// use std::path::PathBuf;
+
+// #[derive(Parser, Debug, Clone)]
+// #[clap(version)]
+// struct Args {
+//     #[clap(short = 'p', long, env)]
+//     garden_path: Option<PathBuf>,
+
+//     #[command(subcommand)]
+//     cmd: Commands,
+// }
+// #[derive(Subcommand, Debug, Clone)]
+// enum Commands {
+//     /// write something in your garden
+//     ///
+//     /// This command will open your $EDITOR, wait for you
+//     /// to write something, and then save the file to your
+//     /// garden
+//     Write {
+//         /// Optionally set a title for what you are going to write about
+//         #[clap(short, long)]
+//         title: Option<String>,
+//     },
+// }
+
+// /// Get the user's garden directory, which by default
+// /// is placed in their home directory
+// fn get_default_garden_dir() -> Option<PathBuf> {
+//     UserDirs::new().map(|dirs| {
+//         dirs.home_dir()
+//             .join("Desktop/100-Days-of-Rust/day-24-garden-errors/garden")
+//     })
+// }
+
+// // fn main() -> Result<(), std::io::Error> {
+// fn main() -> miette::Result<()> {
+//     let args = Args::parse();
+//     dbg!(args.clone());
+
+//     let Some(garden_path) = args.garden_path.or_else(get_default_garden_dir) else {
+//         let mut cmd = Args::command();
+//         cmd.error(
+//                ErrorKind::ValueValidation,
+//                format!(
+//                    "garden directory not provided and home directory unavailable for default garden directory"
+//                ),
+//            )
+//            .exit()
+//     };
+//     if !garden_path.exists() {
+//         let mut cmd = Args::command();
+//         cmd.error(
+//             ErrorKind::ValueValidation,
+//             format!(
+//                 "garden directory `{}` doesn't exist, or is inaccessible",
+//                 garden_path.display()
+//             ),
+//         )
+//         .exit()
+//     };
+
+//     dbg!(garden_path.clone());
+//     match args.cmd {
+//         Commands::Write { title } => {
+//             // day_24_garden_errors::write(garden_path, title)
+//             day_24_garden_errors::write(garden_path, title).into_diagnostic()
+//         }
+//     }
+// }
+
+// // cargo run -- write -t "My New Post"
+// // then delete the temp file manually to see the new error message
+
+// // ⛳️ Step 4 - Adding custom context to errors
+
+// use clap::{CommandFactory, Parser, Subcommand, error::ErrorKind};
+// use directories::UserDirs;
+// use miette::Context;
+// use std::path::PathBuf;
+
+// #[derive(Parser, Debug, Clone)]
+// #[clap(version)]
+// struct Args {
+//     #[clap(short = 'p', long, env)]
+//     garden_path: Option<PathBuf>,
+
+//     #[command(subcommand)]
+//     cmd: Commands,
+// }
+// #[derive(Subcommand, Debug, Clone)]
+// enum Commands {
+//     /// write something in your garden
+//     ///
+//     /// This command will open your $EDITOR, wait for you
+//     /// to write something, and then save the file to your
+//     /// garden
+//     Write {
+//         /// Optionally set a title for what you are going to write about
+//         #[clap(short, long)]
+//         title: Option<String>,
+//     },
+// }
+
+// /// Get the user's garden directory, which by default
+// /// is placed in their home directory
+// fn get_default_garden_dir() -> Option<PathBuf> {
+//     UserDirs::new().map(|dirs| {
+//         dirs.home_dir()
+//             .join("Desktop/100-Days-of-Rust/day-24-garden-errors/garden")
+//     })
+// }
+
+// // fn main() -> Result<(), std::io::Error> {
+// fn main() -> miette::Result<()> {
+//     let args = Args::parse();
+//     dbg!(args.clone());
+
+//     let Some(garden_path) = args.garden_path.or_else(get_default_garden_dir) else {
+//         let mut cmd = Args::command();
+//         cmd.error(
+//                ErrorKind::ValueValidation,
+//                format!(
+//                    "garden directory not provided and home directory unavailable for default garden directory"
+//                ),
+//            )
+//            .exit()
+//     };
+//     if !garden_path.exists() {
+//         let mut cmd = Args::command();
+//         cmd.error(
+//             ErrorKind::ValueValidation,
+//             format!(
+//                 "garden directory `{}` doesn't exist, or is inaccessible",
+//                 garden_path.display()
+//             ),
+//         )
+//         .exit()
+//     };
+
+//     dbg!(garden_path.clone());
+//     match args.cmd {
+//         Commands::Write { title } => {
+//             // day_24_garden_errors::write(garden_path, title).into_diagnostic()
+//             day_24_garden_errors::write(garden_path, title).wrap_err("garden::write")
+//         }
+//     }
+// }
+
+// // cargo run -- write
+// // then delete the temp file manually to see the new error message

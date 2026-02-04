@@ -277,3 +277,5 @@ fn main() {
 //     Confirm { name: String, email: String },
 //     Complete,
 // }
+
+// State machines with no boiler -> https://youtu.be/z-0-bbc80JM?si=H_sqM_J9dKPrRB9X

@@ -37,3 +37,4 @@ I come from a typescript background, so the majority of my understanding will co
 - [When starting to learn Rust, only focus on structs, vectors, iteration, Result and Option.](https://youtu.be/sDtQaO5_SOw?t=169)
 - [Don't use refernces, copy and clone everything.](https://youtu.be/2hXNd6x9sZs?t=557)
 - [The Rust roadmap, to cross of concepts as you pick them up](https://roadmap.sh/rust?fl=1)
+- [Everything No Boilerplate](https://youtube.com/playlist?list=PLZaoyhMXgBzoM9bfb5pyUOT3zjnaDdSEP&si=9a0hDsbe0GXxGnHX)
