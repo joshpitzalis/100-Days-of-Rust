@@ -29,9 +29,10 @@ I come from a typescript background, so the majority of my understanding will co
  - Day 20 - [Error Calculator](https://youtu.be/jFOy0dbjq7o)
  - Day 21 - Custom Error Calculator
  - Day 22 - State Machine
- - Day 23 - Digital Garden
- - Day 24 - Digital Garden Errors
- - Day 25 - Digital Garden Testing
+ - Day 23 - Digital Garden (1/3)
+ - Day 24 - Digital Garden Errors  (2/3)
+ - Day 25 - Digital Garden Testing  (3/3)
+
 
 ## Helpful stuff I found along the way
 - [When starting to learn Rust, only focus on structs, vectors, iteration, Result and Option.](https://youtu.be/sDtQaO5_SOw?t=169)
