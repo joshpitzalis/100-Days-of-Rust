@@ -32,6 +32,7 @@ I come from a typescript background, so the majority of my understanding will co
  - Day 23 - Digital Garden (1/3)
  - Day 24 - Digital Garden Errors  (2/3)
  - Day 25 - Digital Garden Testing  (3/3)
+ - Day 26 - Cli Chat App
 
 
 ## Helpful stuff I found along the way
@@ -39,3 +40,4 @@ I come from a typescript background, so the majority of my understanding will co
 - [Don't use refernces, copy and clone everything.](https://youtu.be/2hXNd6x9sZs?t=557)
 - [The Rust roadmap, to cross of concepts as you pick them up](https://roadmap.sh/rust?fl=1)
 - [Everything No Boilerplate](https://youtube.com/playlist?list=PLZaoyhMXgBzoM9bfb5pyUOT3zjnaDdSEP&si=9a0hDsbe0GXxGnHX)
+- [Rust cheatsheet](https://d11n7da8rpqbjy.cloudfront.net/letsgetrusty/31007888_1722618620074Rust_Cheat_Sheet_2.0.2.pdf)
