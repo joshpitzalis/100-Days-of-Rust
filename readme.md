@@ -38,6 +38,30 @@ I come from a typescript background, so the majority of my understanding will co
 
 ## Helpful stuff I found along the way
 
-- [Don't use refernces, copy and clone everything.](https://youtu.be/2hXNd6x9sZs?t=557)
-- [When starting to learn Rust, only focus on structs, vectors, iteration, Result and Option.](https://youtu.be/sDtQaO5_SOw?t=169)
-- [Learn Rust by domain instead of byfeatures](https://youtu.be/DhiHhQimSa4?si=EdEhVY085UBwdYWc)
+- [Don't use refernces, copy and clone everything.](https://youtu.be/2hXNd6x9sZs?t=557) #overwhelm
+- [When starting to learn Rust, only focus on structs, vectors, iteration, Result and Option.](https://youtu.be/sDtQaO5_SOw?t=169) #overwhelm
+- [Learn Rust by domain instead of byfeatures](https://youtu.be/DhiHhQimSa4?si=EdEhVY085UBwdYWc) #direction
+
+## Resources used
+- [100 Projects in 100 Days with Vivian Aranha](https://www.udemy.com/course/rust-programming-bootcamp/)
+- [Rust Adventure with Chris Biscardi](https://www.rustadventure.dev/)
+- [Zero To Production In Rust with Luca Palmieri](https://www.zero2prod.com/)
+
+
+## Concepts to Learn
+- [x] [ ] [ ] Structs 
+- [x] [ ] [ ] Vectors 
+- [x] [ ] [ ] Iteration 
+- [x] [ ] [ ] Result 
+- [x] [ ] [ ] Option
+- [ ] [ ] [ ] async executors
+- [ ] [ ] [ ] locks and atomics
+- [ ] [ ] [ ] message passing via channels
+- [x] [ ] [ ] Actix
+- [ ] [ ] [ ] logging and tracing
+- [x] [ ] [ ] error handling and reporting
+- [ ] [ ] [ ] sqlx, sea-orm, Diesel
+
+1- I know what it is
+2- Can use it without referencing the docs/examples
+3- Understand the gotchas
