@@ -48,21 +48,24 @@ I come from a typescript background, so the majority of my understanding will co
 - [ 👌 Zero To Production In Rust with Luca Palmieri](https://www.zero2prod.com/)
 
 ## Concepts to Learn
-- [x] [ ] [ ] Structs 
-- [x] [ ] [ ] Vectors 
-- [x] [ ] [ ] Iteration 
-- [x] [ ] [ ] Result 
-- [x] [ ] [ ] Option
-- [ ] [ ] [ ] async executors
-- [ ] [ ] [ ] locks and atomics
-- [ ] [ ] [ ] message passing via channels
-- [x] [ ] [ ] Actix
-- [ ] [ ] [ ] logging and tracing
-- [x] [ ] [ ] error handling 
-- [ ] [ ] [ ] error reporting
-- [ ] [ ] [ ] sqlx, sea-orm, Diesel
-- [ ] [ ] [ ] Doc-tests
 
-1 - I know what it is
-2 - Can use it without referencing the docs/examples
-3 - Understand the gotchas
+> **1** Know It · I know what it is
+> **2** Use It  · Can use it without referencing the docs or examples
+> **3** Gotchas · Understand the gotchas, pitchfalls, and common mistakes around it
+
+| Concept | Know It | Use It | Gotchas |
+|---|:---:|:---:|:---:|
+| Structs | ✅ | ⬜ | ⬜ |
+| Vectors | ✅ | ⬜ | ⬜ |
+| Iteration | ✅ | ⬜ | ⬜ |
+| Result | ✅ | ⬜ | ⬜ |
+| Option | ✅ | ⬜ | ⬜ |
+| async executors | ⬜ | ⬜ | ⬜ |
+| locks and atomics | ⬜ | ⬜ | ⬜ |
+| message passing via channels | ⬜ | ⬜ | ⬜ |
+| Actix | ✅ | ⬜ | ⬜ |
+| logging and tracing | ⬜ | ⬜ | ⬜ |
+| error handling | ✅ | ⬜ | ⬜ |
+| error reporting | ⬜ | ⬜ | ⬜ |
+| sqlx, sea-orm, Diesel | ⬜ | ⬜ | ⬜ |
+| Doc-tests | ⬜ | ⬜ | ⬜ |
