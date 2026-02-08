@@ -34,7 +34,7 @@ I come from a typescript background, so the majority of my understanding will co
  - Day 25 - Digital Garden Testing  (3/3)
  - Day 26 - Cli Chat App
  - Day 27 - Logger
-
+ - Day 28 - Actix Web Server
 
 ## Helpful stuff I found along the way
 
