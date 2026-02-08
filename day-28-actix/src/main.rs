@@ -46,9 +46,9 @@ fn main() {
 //     .await
 // }
 
-//// cargo run
-//// goto: http://127.0.0.1:8000/
-//// goto: http://127.0.0.1:8000/<your_name>
+// // cargo run
+// // goto: http://127.0.0.1:8000/
+// // goto: http://127.0.0.1:8000/<your_name>
 
 // // ⛳️ Step 2 - Replace the greeter with a health check endpoint
 // // A health check endpoint returns 200 OK with no body.
