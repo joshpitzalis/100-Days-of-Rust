@@ -1,0 +1,27 @@
+[package]
+name = "day-30-database"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+actix-web = "4"
+serde = { version = "1.0.228", features = ["derive"] }
+tokio = { version = "1.49.0", features = ["macros", "rt-multi-thread"] }
+config= "0.14"
+uuid= { version= "1", features = ["v4"] }
+chrono = { version= "0.4.22", default-features = false, features = ["clock"] }
+
+[dev-dependencies]
+reqwest = "0.13.2"
+
+[dependencies.sqlx]
+version= "0.8"
+default-features = false
+features = [
+"runtime-tokio-rustls",
+"macros",
+"postgres",
+"uuid",
+"chrono",
+"migrate"
+]

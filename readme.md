@@ -1,5 +1,5 @@
- # ⛳️ Rust for TypeScript Devs 
- ## 100 Projects in 100 Days
+# ⛳️ Rust for TypeScript Devs
+## 100 Projects in 100 Days
 
 I'm struggling to find the time to learn Rust at the moment. Instead of giving up entirely, I try and build something super simple each day to the momentum going.
  
@@ -34,7 +34,10 @@ I come from a typescript background, so the majority of my understanding will co
  - Day 25 - Digital Garden Testing  (3/3) 🪴
  - Day 26 - Cli Chat App 💯
  - Day 27 - Logger 💯
- - Day 28 - Actix Web Server (0 - 3.5 👌)
+ - Day 28 - Actix Web Server (1.1 - 3.6 👌)
+ - Day 29 - Actix Web Forms (3.7 👌)
+ - Day 30 - Database (3.8 - 3.11 👌)
+ <!--- Day 31 - Actix Web Server (4.1 - ? 👌)-->
 
 ## Helpful stuff I found along the way
 
@@ -49,9 +52,9 @@ I come from a typescript background, so the majority of my understanding will co
 
 ## Concepts to Learn
 
-> **1** Know It · I know what it is
-> **2** Use It  · Can use it without referencing the docs or examples
-> **3** Gotchas · Understand the gotchas, pitchfalls, and common mistakes around it
+**1** Know It · I know what it is  <br>
+**2** Use It  · Can use it without referencing the docs or examples <br>
+**3** Gotchas · Understand the gotchas, pitchfalls, and common mistakes around it <br>
 
 | Concept | Know It | Use It | Gotchas |
 |---|:---:|:---:|:---:|
