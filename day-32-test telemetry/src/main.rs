@@ -1,21 +1,19 @@
-use day_31_telemetry::configuration::get_configuration;
-use day_31_telemetry::startup::run;
-use sqlx::PgPool;
-use std::net::TcpListener;
+// use day_31_telemetry::configuration::get_configuration;
+// use day_31_telemetry::startup::run;
+// use sqlx::PgPool;
+// use std::net::TcpListener;
 
-#[tokio::main]
-async fn main() -> Result<(), std::io::Error> {
-    let configuration = get_configuration().expect("Failed to read configuration.");
-    // Renamed!
-    let connection_pool = PgPool::connect(&configuration.database.connection_string())
-        .await
-        .expect("Failed to connect to Postgres.");
-    let address = format!("127.0.0.1:{}", configuration.application_port);
-    let listener = TcpListener::bind(address)?;
-    run(listener, connection_pool)?.await
-}
-
-// cargo test
+// #[tokio::main]
+// async fn main() -> Result<(), std::io::Error> {
+//     let configuration = get_configuration().expect("Failed to read configuration.");
+//     // Renamed!
+//     let connection_pool = PgPool::connect(&configuration.database.connection_string())
+//         .await
+//         .expect("Failed to connect to Postgres.");
+//     let address = format!("127.0.0.1:{}", configuration.application_port);
+//     let listener = TcpListener::bind(address)?;
+//     run(listener, connection_pool)?.await
+// }
 
 // // ⛳️ Step 1 - Instrumenting logs
 
@@ -182,27 +180,30 @@ async fn main() -> Result<(), std::io::Error> {
 // // We add +nightly to our cargo invocation to tell cargo explicitly what toolchain we want to use.
 // // cargo +nightly udeps
 
-// // ⛳️ Step 6 - Refactor
+// ⛳️ Step 6 - Refactor
 
-// use day_31_telemetry::configuration::get_configuration;
-// use day_31_telemetry::startup::run;
-// use day_31_telemetry::telemetry::{get_subscriber, init_subscriber};
-// use sqlx::PgPool;
-// use std::net::TcpListener;
+use day_31_telemetry::configuration::get_configuration;
+use day_31_telemetry::startup::run;
+use day_31_telemetry::telemetry::{get_subscriber, init_subscriber};
+use sqlx::PgPool;
+use std::net::TcpListener;
 
-// #[tokio::main]
-// async fn main() -> Result<(), std::io::Error> {
-//     let subscriber = get_subscriber("day_31_telemetry".into(), "info".into());
-//     init_subscriber(subscriber);
+#[tokio::main]
+async fn main() -> Result<(), std::io::Error> {
+    let subscriber = get_subscriber("day_31_telemetry".into(), "info".into());
+    init_subscriber(subscriber);
 
-//     let configuration = get_configuration().expect("Failed to read configuration.");
-//     let connection_pool = PgPool::connect(&configuration.database.connection_string())
-//         .await
-//         .expect("Failed to connect to Postgres.");
-//     let address = format!("127.0.0.1:{}", configuration.application_port);
-//     let listener = TcpListener::bind(address)?;
-//     run(listener, connection_pool)?.await
-// }
+    let configuration = get_configuration().expect("Failed to read configuration.");
+    let connection_pool = PgPool::connect(&configuration.database.connection_string())
+        .await
+        .expect("Failed to connect to Postgres.");
+    let address = format!("127.0.0.1:{}", configuration.application_port);
+    let listener = TcpListener::bind(address)?;
+    run(listener, connection_pool)?.await
+}
 
-// // -> === src/lib.rs ===
-// // -> === src/telemetry.rs ===
+// -> === src/lib.rs ===
+// -> === src/telemetry.rs ===
+
+// ⛳️ Step 7 - Logs For Integration Tests
+// -> === tests/health_check.rs ===

@@ -1,35 +1,35 @@
-use actix_web::{HttpResponse, web};
-use chrono::Utc;
-use sqlx::PgPool;
-use uuid::Uuid;
+// use actix_web::{HttpResponse, web};
+// use chrono::Utc;
+// use sqlx::PgPool;
+// use uuid::Uuid;
 
-#[derive(serde::Deserialize)]
-pub struct FormData {
-    email: String,
-    name: String,
-}
+// #[derive(serde::Deserialize)]
+// pub struct FormData {
+//     email: String,
+//     name: String,
+// }
 
-pub async fn subscribe(form: web::Form<FormData>, pool: web::Data<PgPool>) -> HttpResponse {
-    match sqlx::query!(
-        r#"
-INSERT INTO subscriptions (id, email, name, subscribed_at)
-VALUES ($1, $2, $3, $4)
-"#,
-        Uuid::new_v4(),
-        form.email,
-        form.name,
-        Utc::now()
-    )
-    .execute(pool.get_ref())
-    .await
-    {
-        Ok(_) => HttpResponse::Ok().finish(),
-        Err(e) => {
-            println!("Failed to execute query: {}", e);
-            HttpResponse::InternalServerError().finish()
-        }
-    }
-}
+// pub async fn subscribe(form: web::Form<FormData>, pool: web::Data<PgPool>) -> HttpResponse {
+//     match sqlx::query!(
+//         r#"
+// INSERT INTO subscriptions (id, email, name, subscribed_at)
+// VALUES ($1, $2, $3, $4)
+// "#,
+//         Uuid::new_v4(),
+//         form.email,
+//         form.name,
+//         Utc::now()
+//     )
+//     .execute(pool.get_ref())
+//     .await
+//     {
+//         Ok(_) => HttpResponse::Ok().finish(),
+//         Err(e) => {
+//             println!("Failed to execute query: {}", e);
+//             HttpResponse::InternalServerError().finish()
+//         }
+//     }
+// }
 
 // // ⛳️ Step 2 - Instrumenting POST /subscriptions
 // //[dependencies]
@@ -165,55 +165,55 @@ VALUES ($1, $2, $3, $4)
 // // [2026-02-14T05:24:03Z TRACE actix_web::middleware::logger] Access log format: %a "%r" %s %b "%{Referer}i" "%{User-Agent}i" %T
 // // ...
 
-// // ⛳️ Step 4 - Instrumenting Futures
+// ⛳️ Step 4 - Instrumenting Futures
 
-// use actix_web::{HttpResponse, web};
-// use chrono::Utc;
-// use sqlx::PgPool;
-// use uuid::Uuid;
+use actix_web::{HttpResponse, web};
+use chrono::Utc;
+use sqlx::PgPool;
+use uuid::Uuid;
 
-// #[derive(serde::Deserialize)]
-// pub struct FormData {
-//     email: String,
-//     name: String,
-// }
+#[derive(serde::Deserialize)]
+pub struct FormData {
+    email: String,
+    name: String,
+}
 
-// pub async fn subscribe(form: web::Form<FormData>, pool: web::Data<PgPool>) -> HttpResponse {
-//     // 🦀
-//     let request_id = Uuid::new_v4();
-//     let request_span = tracing::info_span!(
-//         "Adding a new subscriber.",
-//         %request_id,
-//         subscriber_email= %form.email,
-//         subscriber_name= %form.name
-//     );
-//     let _request_span_guard = request_span.enter();
+pub async fn subscribe(form: web::Form<FormData>, pool: web::Data<PgPool>) -> HttpResponse {
+    // 🦀
+    let request_id = Uuid::new_v4();
+    let request_span = tracing::info_span!(
+        "Adding a new subscriber.",
+        %request_id,
+        subscriber_email= %form.email,
+        subscriber_name= %form.name
+    );
+    let _request_span_guard = request_span.enter();
 
-//     // We do not call `.enter` on query_span!
-//     // `.instrument` takes care of it at the right moments
-//     // in the query future lifetime
-//     // let query_span = tracing::info_span!("Saving new subscriber details in the database");
+    // We do not call `.enter` on query_span!
+    // `.instrument` takes care of it at the right moments
+    // in the query future lifetime
+    // let query_span = tracing::info_span!("Saving new subscriber details in the database");
 
-//     match sqlx::query!(
-//         r#"
-// INSERT INTO subscriptions (id, email, name, subscribed_at)
-// VALUES ($1, $2, $3, $4)
-// "#,
-//         Uuid::new_v4(),
-//         form.email,
-//         form.name,
-//         Utc::now()
-//     )
-//     .execute(pool.get_ref())
-//     .await
-//     {
-//         Ok(_) => HttpResponse::Ok().finish(),
-//         Err(e) => {
-//             // 🦀
-//             // Yes, this error log falls outside of `query_span`
-//             // We'll rectify it later, pinky swear!
-//             tracing::error!("Failed to execute query: {:?}", e);
-//             HttpResponse::InternalServerError().finish()
-//         }
-//     }
-// }
+    match sqlx::query!(
+        r#"
+INSERT INTO subscriptions (id, email, name, subscribed_at)
+VALUES ($1, $2, $3, $4)
+"#,
+        Uuid::new_v4(),
+        form.email,
+        form.name,
+        Utc::now()
+    )
+    .execute(pool.get_ref())
+    .await
+    {
+        Ok(_) => HttpResponse::Ok().finish(),
+        Err(e) => {
+            // 🦀
+            // Yes, this error log falls outside of `query_span`
+            // We'll rectify it later, pinky swear!
+            tracing::error!("Failed to execute query: {:?}", e);
+            HttpResponse::InternalServerError().finish()
+        }
+    }
+}

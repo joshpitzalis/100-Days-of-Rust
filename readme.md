@@ -1,5 +1,4 @@
 # ⛳️ Rust for TypeScript Devs
-## 100 Projects in 100 Days
 
 I'm struggling to find the time to learn Rust at the moment. Instead of giving up entirely, I try and build something super simple each day to the momentum going.
  
@@ -7,6 +6,12 @@ Each day's project is basic enough that I can finish it in about 30 minutes.
   
 I come from a typescript background, so the majority of my understanding will come from translating typescript concepts over.
 
+## Resources used
+- [ 💯 100 Projects in 100 Days with Vivian Aranha](https://www.udemy.com/course/rust-programming-bootcamp/)
+- [ 🪴 Rust Adventure with Chris Biscardi](https://www.rustadventure.dev/)
+- [ 👌 Zero To Production In Rust with Luca Palmieri](https://www.zero2prod.com/)
+
+## 100 Projects in 100 Days
  - Day 1 - [Hello Rust](https://youtu.be/2LZiMnMNhns) 💯
  - Day 2 - [Temperature Converter](https://youtu.be/dkeijLKdskY) 💯
  - Day 3 - [Simple Calculator](https://youtu.be/ua-R-eT3hdE) 💯
@@ -37,18 +42,14 @@ I come from a typescript background, so the majority of my understanding will co
  - Day 28 - Actix Web Server (1.1 - 3.6 👌)
  - Day 29 - Actix Web Forms (3.7 👌)
  - Day 30 - Database (3.8 - 3.11 👌)
- <!--- Day 31 - Actix Web Server (4.1 - ? 👌)-->
+ - Day 31 - Telemetry (4.1 - 4.5.10 👌)
+ <!---  - Day 31 - Telemetry ( 4.5.11 👌)-->
 
 ## Helpful stuff I found along the way
 
 - [Don't use refernces, copy and clone everything.](https://youtu.be/2hXNd6x9sZs?t=557) #overwhelm
 - [When starting to learn Rust, only focus on structs, vectors, iteration, Result and Option.](https://youtu.be/sDtQaO5_SOw?t=169) #overwhelm
-- [Learn Rust by domain instead of byfeatures](https://youtu.be/DhiHhQimSa4?si=EdEhVY085UBwdYWc) #direction
-
-## Resources used
-- [ 💯 100 Projects in 100 Days with Vivian Aranha](https://www.udemy.com/course/rust-programming-bootcamp/)
-- [ 🪴 Rust Adventure with Chris Biscardi](https://www.rustadventure.dev/)
-- [ 👌 Zero To Production In Rust with Luca Palmieri](https://www.zero2prod.com/)
+- [Learn Rust by domain instead of by features](https://youtu.be/DhiHhQimSa4?si=EdEhVY085UBwdYWc) #direction
 
 ## Concepts to Learn
 
