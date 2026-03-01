@@ -14,13 +14,16 @@ export default function MarkdownEditor({
 	const controlled = value !== undefined && onChange !== undefined;
 
 	return (
-		<MDEditor
-			value={controlled ? value : internal}
-			onChange={(val) =>
-				controlled ? onChange(val ?? "") : setInternal(val ?? "")
-			}
-			preview="edit"
-			hideToolbar
-		/>
+		<div data-color-mode="dark">
+			<MDEditor
+				value={controlled ? value : internal}
+				onChange={(val) =>
+					controlled ? onChange(val ?? "") : setInternal(val ?? "")
+				}
+				preview="edit"
+				hideToolbar
+				style={{ backgroundColor: "#2A2A37" }}
+			/>
+		</div>
 	);
 }

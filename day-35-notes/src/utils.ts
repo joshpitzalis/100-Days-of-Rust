@@ -5,3 +5,14 @@ export async function ensureAppDirExists() {
 		await mkdir("", { baseDir: BaseDirectory.AppData });
 	}
 }
+
+export async function nextUntitledName(): Promise<string> {
+	const base = "Untitled";
+	let name = `${base}.md`;
+	let i = 1;
+	while (await exists(name, { baseDir: BaseDirectory.AppData })) {
+		name = `${base} ${i}.md`;
+		i++;
+	}
+	return name;
+}

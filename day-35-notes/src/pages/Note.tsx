@@ -48,7 +48,7 @@ export default function Note() {
 	}, [content, file, saveNote]);
 
 	return (
-		<div className="p-8 mx-auto max-w-[400px] text-center">
+		<div className="p-8 mx-auto max-w-[400px] text-center text-fuji-white">
 			<h1 className="text-2xl font-bold mb-5 mt-12">{file}</h1>
 			<EasyMde value={content} onChange={setContent} />
 		</div>

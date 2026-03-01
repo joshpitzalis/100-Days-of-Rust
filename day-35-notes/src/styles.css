@@ -131,3 +131,8 @@
     --color-lotus-cyan: #d7e3d8;
 }
 
+body {
+  background-color: var(--color-sumi-ink-3);
+  color: var(--color-fuji-white);
+}
+
