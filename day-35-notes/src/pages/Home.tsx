@@ -1,12 +1,25 @@
-import { BaseDirectory, create } from "@tauri-apps/plugin-fs";
+import { BaseDirectory, create, exists } from "@tauri-apps/plugin-fs";
 import { useNavigate } from "react-router-dom";
 
 export default function Home() {
 	const navigate = useNavigate();
+
+	async function nextUntitledName(): Promise<string> {
+		const base = "Untitled";
+		let name = `${base}.md`;
+		let i = 1;
+		while (await exists(name, { baseDir: BaseDirectory.AppData })) {
+			name = `${base} ${i}.md`;
+			i++;
+		}
+		return name;
+	}
+
 	async function createNote() {
-		const file = await create("My Note.md", { baseDir: BaseDirectory.AppData });
+		const name = await nextUntitledName();
+		const file = await create(name, { baseDir: BaseDirectory.AppData });
 		await file.close();
-		navigate("/note/My Note.md");
+		navigate(`/note/${name}`);
 	}
 	return (
 		<div className="p-8 mx-auto max-w-[400px] text-center">

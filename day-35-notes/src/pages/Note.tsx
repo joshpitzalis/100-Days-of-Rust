@@ -1,23 +1,43 @@
 import {
 	BaseDirectory,
+	create,
+	exists,
 	readTextFile,
 	writeTextFile,
 } from "@tauri-apps/plugin-fs";
 import { useCallback, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import EasyMde from "../components/EasyMde";
+
+async function nextUntitledName(): Promise<string> {
+	const base = "Untitled";
+	let name = `${base}.md`;
+	let i = 1;
+	while (await exists(name, { baseDir: BaseDirectory.AppData })) {
+		name = `${base} ${i}.md`;
+		i++;
+	}
+	return name;
+}
 
 export default function Note() {
 	const { file } = useParams<{ file: string }>();
+	const navigate = useNavigate();
 	const [content, setContent] = useState("");
 
 	useEffect(() => {
-		if (!file) return;
-		readTextFile(file, { baseDir: BaseDirectory.AppData }).then(setContent);
-	}, [file]);
+		if (file) {
+			readTextFile(file, { baseDir: BaseDirectory.AppData }).then(setContent);
+		} else {
+			nextUntitledName().then(async (name) => {
+				const f = await create(name, { baseDir: BaseDirectory.AppData });
+				await f.close();
+				navigate(`/note/${name}`, { replace: true });
+			});
+		}
+	}, [file, navigate]);
 
 	const saveNote = useCallback(async (file: string, content: string) => {
-		if (!file) return;
 		await writeTextFile(file, content, { baseDir: BaseDirectory.AppData });
 		console.log("write", content);
 	}, []);
