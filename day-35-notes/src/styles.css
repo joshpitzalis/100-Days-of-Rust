@@ -1,0 +1,133 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  /* Bg Shades */
+    --color-sumi-ink-0: #16161D;
+    --color-sumi-ink-1: #181820;
+    --color-sumi-ink-2: #1a1a22;
+    --color-sumi-ink-3: #1F1F28;
+    --color-sumi-ink-4: #2A2A37;
+    --color-sumi-ink-5: #363646;
+    --color-sumi-ink-6: #54546D;
+
+    /* Popup and Floats */
+    --color-wave-blue-1: #223249;
+    --color-wave-blue-2: #2D4F67;
+
+    /* Diff and Git */
+    --color-winter-green: #2B3328;
+    --color-winter-yellow: #49443C;
+    --color-winter-red: #43242B;
+    --color-winter-blue: #252535;
+    --color-autumn-green: #76946A;
+    --color-autumn-red: #C34043;
+    --color-autumn-yellow: #DCA561;
+
+    /* Diag */
+    --color-samurai-red: #E82424;
+    --color-ronin-yellow: #FF9E3B;
+    --color-wave-aqua-1: #6A9589;
+    --color-dragon-blue: #658594;
+
+    /* Fg and Comments */
+    --color-old-white: #C8C093;
+    --color-fuji-white: #DCD7BA;
+    --color-fuji-gray: #727169;
+
+    --color-oni-violet: #957FB8;
+    --color-oni-violet-2: #b8b4d0;
+    --color-crystal-blue: #7E9CD8;
+    --color-spring-violet-1: #938AA9;
+    --color-spring-violet-2: #9CABCA;
+    --color-spring-blue: #7FB4CA;
+    --color-light-blue: #A3D4D5;
+    --color-wave-aqua-2: #7AA89F;
+
+    /* Additional Wave Aqua Variants */
+    --color-wave-aqua-3: #68AD99;
+    --color-wave-aqua-4: #7AA880;
+    --color-wave-aqua-5: #6CAF95;
+
+    /* More Colors */
+    --color-spring-green: #98BB6C;
+    --color-boat-yellow-1: #938056;
+    --color-boat-yellow-2: #C0A36E;
+    --color-carp-yellow: #E6C384;
+
+    --color-sakura-pink: #D27E99;
+    --color-wave-red: #E46876;
+    --color-peach-red: #FF5D62;
+    --color-surimi-orange: #FFA066;
+    --color-katana-gray: #717C7C;
+
+    /* Dragon Theme */
+    --color-dragon-black-0: #0d0c0c;
+    --color-dragon-black-1: #12120f;
+    --color-dragon-black-2: #1D1C19;
+    --color-dragon-black-3: #181616;
+    --color-dragon-black-4: #282727;
+    --color-dragon-black-5: #393836;
+    --color-dragon-black-6: #625e5a;
+
+    --color-dragon-white: #c5c9c5;
+    --color-dragon-green: #87a987;
+    --color-dragon-green-2: #8a9a7b;
+    --color-dragon-pink: #a292a3;
+    --color-dragon-orange: #b6927b;
+    --color-dragon-orange-2: #b98d7b;
+    --color-dragon-gray: #a6a69c;
+    --color-dragon-gray-2: #9e9b93;
+    --color-dragon-gray-3: #7a8382;
+    --color-dragon-blue-2: #8ba4b0;
+    --color-dragon-violet: #8992a7;
+    --color-dragon-red: #c4746e;
+    --color-dragon-aqua: #8ea4a2;
+    --color-dragon-ash: #737c73;
+    --color-dragon-teal: #949fb5;
+    --color-dragon-yellow: #c4b28a;
+
+    /* Lotus Theme */
+    --color-lotus-ink-1: #545464;
+    --color-lotus-ink-2: #43436c;
+    --color-lotus-gray: #dcd7ba;
+    --color-lotus-gray-2: #716e61;
+    --color-lotus-gray-3: #8a8980;
+    --color-lotus-white-0: #d5cea3;
+    --color-lotus-white-1: #dcd5ac;
+    --color-lotus-white-2: #e5ddb0;
+    --color-lotus-white-3: #f2ecbc;
+    --color-lotus-white-4: #e7dba0;
+    --color-lotus-white-5: #e4d794;
+
+    --color-lotus-violet-1: #a09cac;
+    --color-lotus-violet-2: #766b90;
+    --color-lotus-violet-3: #c9cbd1;
+    --color-lotus-violet-4: #624c83;
+    --color-lotus-blue-1: #c7d7e0;
+    --color-lotus-blue-2: #b5cbd2;
+    --color-lotus-blue-3: #9fb5c9;
+    --color-lotus-blue-4: #4d699b;
+    --color-lotus-blue-5: #5d57a3;
+    --color-lotus-green: #6f894e;
+    --color-lotus-green-2: #6e915f;
+    --color-lotus-green-3: #b7d0ae;
+    --color-lotus-pink: #b35b79;
+    --color-lotus-orange: #cc6d00;
+    --color-lotus-orange-2: #e98a00;
+    --color-lotus-yellow: #77713f;
+    --color-lotus-yellow-2: #836f4a;
+    --color-lotus-yellow-3: #de9800;
+    --color-lotus-yellow-4: #f9d791;
+    --color-lotus-red: #c84053;
+    --color-lotus-red-2: #d7474b;
+    --color-lotus-red-3: #e82424;
+    --color-lotus-red-4: #d9a594;
+    --color-lotus-aqua: #597b75;
+    --color-lotus-aqua-2: #5e857a;
+    --color-lotus-teal-1: #4e8ca2;
+    --color-lotus-teal-2: #6693bf;
+    --color-lotus-teal-3: #5a7785;
+    --color-lotus-cyan: #d7e3d8;
+}
+
