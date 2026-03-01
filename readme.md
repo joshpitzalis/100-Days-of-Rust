@@ -11,6 +11,7 @@ I come from a typescript background, so the majority of my understanding will co
 - [ 💯 100 Projects in 100 Days with Vivian Aranha](https://www.udemy.com/course/rust-programming-bootcamp/)
 - [ 🪴 Rust Adventure with Chris Biscardi](https://www.rustadventure.dev/)
 - [ 👌 Zero To Production In Rust with Luca Palmieri](https://www.zero2prod.com/)
+- [ 🖥️ Tauri Tutorials with Christian Pavilonis](https://tauritutorials.com/tauri-basics-course)
 
 ## 100 Projects in 100 Days
 
@@ -46,7 +47,9 @@ I come from a typescript background, so the majority of my understanding will co
 - Day 30 - Database (3.8 - 3.11 👌)
 - Day 31 - Telemetry (4.1 - 4.5.10 👌)
 - Day 32 - Telemetry ( 4.5.11 - 4.6 👌)
-<!--- Day 33 - Deploy ( 5.1 - 👌)-->
+- Day 33 - Deploy ( 4.6 -5.1 👌)
+- Day 34 - [Hello Tauri](https://tauritutorials.com/tauri-basics/hello-tauri) 🖥️
+- Day 35 - Tauri Notes App 🖥️
 
 ## Helpful stuff I found along the way
 
