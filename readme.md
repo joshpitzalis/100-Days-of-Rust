@@ -49,7 +49,8 @@ I come from a typescript background, so the majority of my understanding will co
 - Day 32 - Telemetry ( 4.5.11 - 4.6 👌)
 - Day 33 - Deploy ( 4.6 -5.1 👌)
 - Day 34 - [Hello Tauri](https://tauritutorials.com/tauri-basics/hello-tauri) 🖥️
-- Day 35 - Tauri Notes App 🖥️
+- Day 35 - Tauri Notes App - create/read/updare 🖥️
+- Day 36 - Tauri Notes App - delete/rename 🖥️
 
 ## Helpful stuff I found along the way
 
