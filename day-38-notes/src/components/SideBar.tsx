@@ -1,13 +1,18 @@
 import { Pencil2Icon } from "@radix-ui/react-icons";
-import { listen } from "@tauri-apps/api/event";
-import { BaseDirectory, type DirEntry, readDir } from "@tauri-apps/plugin-fs";
+import { emit, listen } from "@tauri-apps/api/event";
+import {
+	BaseDirectory,
+	create,
+	type DirEntry,
+	readDir,
+} from "@tauri-apps/plugin-fs";
 import { useCallback, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { createNote } from "../features/notes/actions";
+import { nextUntitledName, trimExtensionName } from "../utils";
 
 export default function SideBar() {
 	const navigate = useNavigate();
-
 	const [files, setFiles] = useState<DirEntry[]>([]);
 
 	const getNotes = useCallback(async () => {
@@ -44,7 +49,7 @@ export default function SideBar() {
 								to={`/note/${file.name}`}
 								className="block w-full px-6 py-1 hover:bg-winter-blue hover:text-spring-blue"
 							>
-								{file.name}
+								{trimExtensionName(file.name)}
 							</Link>
 						</li>
 					))}

@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
 import { createNote } from "../features/notes/actions";
-
 export default function Home() {
 	const navigate = useNavigate();
 

@@ -49,8 +49,10 @@ I come from a typescript background, so the majority of my understanding will co
 - Day 32 - Telemetry ( 4.5.11 - 4.6 👌)
 - Day 33 - Deploy ( 4.6 -5.1 👌)
 - Day 34 - [Hello Tauri](https://tauritutorials.com/tauri-basics/hello-tauri) 🖥️
-- Day 35 - Tauri Notes App - create/read/updare 🖥️
+- Day 35 - Tauri Notes App - create/read/update 🖥️
 - Day 36 - Tauri Notes App - delete/rename 🖥️
+- Day 37 - Tauri Notes App - menubar 🖥️
+- Day 38 - Tauri Notes App - multiwindow support 🖥️
 
 ## Helpful stuff I found along the way
 
