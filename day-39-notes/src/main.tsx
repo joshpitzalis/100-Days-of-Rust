@@ -5,6 +5,7 @@ import App from "./App";
 import "./styles.css";
 import { ensureAppDirExists } from "./utils";
 import "./menubar.ts";
+import "./shortcuts.ts";
 
 createRoot(document.getElementById("app")!).render(
 	<StrictMode>
