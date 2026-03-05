@@ -53,6 +53,8 @@ I come from a typescript background, so the majority of my understanding will co
 - Day 36 - Tauri Notes App - delete/rename 🖥️
 - Day 37 - Tauri Notes App - menubar 🖥️
 - Day 38 - Tauri Notes App - multiwindow support 🖥️
+- Day 39 - Tauri Notes App - shortcuts 🖥️
+- Day 40 - Tauri Notes App - tags (and SQLite) 🖥️
 
 ## Helpful stuff I found along the way
 
