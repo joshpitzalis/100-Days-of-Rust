@@ -1,3 +1,6 @@
+use fuzzy_matcher::{skim::SkimMatcherV2, FuzzyMatcher};
+use std::ffi::OsStr;
+use std::path::Path;
 use tauri::{AppHandle, Manager, WebviewWindowBuilder};
 use tauri_plugin_global_shortcut::{Code, GlobalShortcutExt, Modifiers, Shortcut, ShortcutState};
 use tauri_plugin_sql::{Migration, MigrationKind};
@@ -49,7 +52,7 @@ pub fn run() {
         .plugin(tauri_plugin_dialog::init())
         .plugin(tauri_plugin_fs::init())
         .plugin(tauri_plugin_opener::init())
-        .invoke_handler(tauri::generate_handler![greet, new_window])
+        .invoke_handler(tauri::generate_handler![greet, new_window, find])
         .setup(move |app| {
             #[cfg(debug_assertions)]
             {
@@ -74,13 +77,58 @@ fn new_window(app: AppHandle) -> tauri::Result<()> {
 
     WebviewWindowBuilder::new(
         &app,
-        &format!(
-            "my-window-{len
-          }"
-        ),
+        &format!("my-window-{len}"),
         tauri::WebviewUrl::App("index.html".into()),
     )
     .inner_size(1280.0, 1040.0)
     .build()?;
     Ok(())
+}
+
+#[tauri::command]
+fn find(app: AppHandle, query: &str) -> Result<Vec<String>, String> {
+    let path = app.path().app_data_dir().map_err(|e| e.to_string())?;
+    Ok(fuzzy_finder(path, query).map_err(|e| e.to_string())?)
+}
+
+fn fuzzy_finder<P: AsRef<Path>>(directory: P, query: &str) -> Result<Vec<String>, std::io::Error> {
+    let matcher = SkimMatcherV2::default();
+    let entries = std::fs::read_dir(directory)?;
+
+    let mut notes = entries
+        .flatten()
+        .filter_map(|entry| {
+            if entry.path().extension() == Some(OsStr::new("md")) {
+                let file_name = entry.file_name();
+                let file_name = file_name.to_str()?;
+                matcher
+                    .fuzzy_match(file_name, query)
+                    .map(|score| (score, file_name.to_string()))
+            } else {
+                None
+            }
+        })
+        .collect::<Vec<_>>();
+    notes.sort_by(|(score1, _), (score2, _)| score2.cmp(score1));
+    Ok(notes
+        .iter()
+        .take(20)
+        .map(|(_, file_name)| file_name)
+        .cloned()
+        .collect())
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_fuzzy_finder_returns_two_items() {
+        let results = fuzzy_finder("./src/test/books", "ba").unwrap();
+        assert_eq!(
+            results.len(),
+            2,
+            "fuzzy_finder should return exactly 2 items"
+        );
+    }
 }

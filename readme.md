@@ -55,6 +55,7 @@ I come from a typescript background, so the majority of my understanding will co
 - Day 38 - Tauri Notes App - multiwindow support 🖥️
 - Day 39 - Tauri Notes App - shortcuts 🖥️
 - Day 40 - Tauri Notes App - tags (and SQLite) 🖥️
+- Day 41 - Tauri Notes App - fuzzy finder 🖥️
 
 ## Helpful stuff I found along the way
 
