@@ -6,7 +6,7 @@ Each day's project is basic enough that I can finish it in about 30 minutes.
 
 I come from a typescript background, so the majority of my understanding will come from translating typescript concepts over.
 
-## Resources used
+## Paid Resources used
 
 - [ 💯 100 Projects in 100 Days with Vivian Aranha](https://www.udemy.com/course/rust-programming-bootcamp/)
 - [ 🪴 Rust Adventure with Chris Biscardi](https://www.rustadventure.dev/)
@@ -57,7 +57,7 @@ I come from a typescript background, so the majority of my understanding will co
 - Day 39 - Tauri Notes App - shortcuts 🖥️
 - Day 40 - Tauri Notes App - tags (and SQLite) 🖥️
 - Day 41 - Tauri Notes App - fuzzy finder 🖥️
-- Day 42 - Tauri Notes App - TS -> Rust Workshop ⚙️
+- Day 42 - Iterators and Enums ⚙️
 
 ## Helpful stuff I found along the way
 

@@ -1,3 +1,7 @@
+// https://theprimeagen.github.io/rust-for-typescript-devs/
+
+// https://theprimeagen.github.io/rust-for-typescript-devs/lessons/coding-rust/iterators
+
 fn sandbox() {
     let list = vec![1, 2, 3];
     let double_list: Vec<i32> = list.iter().map(|item| item * 2).collect();
@@ -14,6 +18,8 @@ fn read_file() {
         .take(2)
         .for_each(|(_, line)| println!("{}", line));
 }
+
+// https://theprimeagen.github.io/rust-for-typescript-devs/lessons/coding-rust/is-for-enums
 
 enum Color {
     Red,
