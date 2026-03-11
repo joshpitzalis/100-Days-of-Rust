@@ -12,6 +12,7 @@ I come from a typescript background, so the majority of my understanding will co
 - [ 🪴 Rust Adventure with Chris Biscardi](https://www.rustadventure.dev/)
 - [ 👌 Zero To Production In Rust with Luca Palmieri](https://www.zero2prod.com/)
 - [ 🖥️ Tauri Tutorials with Christian Pavilonis](https://tauritutorials.com/tauri-basics-course)
+- [ ⚙️ Rust for TypeScript Developers with The Primeagen](https://frontendmasters.com/courses/rust-ts-devs/)
 
 ## 100 Projects in 100 Days
 
@@ -56,6 +57,7 @@ I come from a typescript background, so the majority of my understanding will co
 - Day 39 - Tauri Notes App - shortcuts 🖥️
 - Day 40 - Tauri Notes App - tags (and SQLite) 🖥️
 - Day 41 - Tauri Notes App - fuzzy finder 🖥️
+- Day 42 - Tauri Notes App - TS -> Rust Workshop ⚙️
 
 ## Helpful stuff I found along the way
 
