@@ -58,6 +58,7 @@ I come from a typescript background, so the majority of my understanding will co
 - Day 40 - Tauri Notes App - tags (and SQLite) 🖥️
 - Day 41 - Tauri Notes App - fuzzy finder 🖥️
 - Day 42 - Iterators and Enums ⚙️
+- Day 43 - Options ⚙️
 
 ## Helpful stuff I found along the way
 
@@ -81,9 +82,12 @@ I come from a typescript background, so the majority of my understanding will co
 | async executors              |   ⬜    |   ⬜   |   ⬜    |
 | locks and atomics            |   ⬜    |   ⬜   |   ⬜    |
 | message passing via channels |   ⬜    |   ⬜   |   ⬜    |
-| Actix                        |   ✅    |   ⬜   |   ⬜    |
 | logging and tracing          |   ⬜    |   ⬜   |   ⬜    |
 | error handling               |   ✅    |   ⬜   |   ⬜    |
 | error reporting              |   ⬜    |   ⬜   |   ⬜    |
-| sqlx, sea-orm, Diesel        |   ⬜    |   ⬜   |   ⬜    |
 | Doc-tests                    |   ⬜    |   ⬜   |   ⬜    |
+| Actix                        |   ✅    |   ⬜   |   ⬜    |
+| Rocket                       |   ✅    |   ⬜   |   ⬜    |
+| Diesel                       |   ✅    |   ⬜   |   ⬜    |
+| Sqlx                         |   ⬜    |   ⬜   |   ⬜    |
+| Sea-orm                      |   ⬜    |   ⬜   |   ⬜    |
