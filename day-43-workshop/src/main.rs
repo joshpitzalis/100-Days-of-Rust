@@ -52,6 +52,28 @@ fn returns_undefined(num: Option<usize>) -> Option<usize> {
     return Some(num?);
 }
 
+// // ts
+// function practice(list: number[], index: number) {
+// 	index >= list.length ? index : list[index];
+// }
+
+// practice([1, 34, 3], 5);
+
+fn number_or_index(list: Vec<usize>, index: usize) -> usize {
+    // if list.len() >= index {
+    //     return list[index];
+    // } else {
+    //     return index;
+    // }
+
+    // return match list.get(index) {
+    //     Some(num) => *num,
+    //     None => index,
+    // };
+
+    *list.get(index).unwrap_or(&index)
+}
+
 fn main() {
     println!("{}", returns_number(Some(5)));
     println!("{}", returns_number(None));
@@ -62,4 +84,7 @@ fn main() {
 
     println!("{:?}", returns_undefined(None));
     println!("{:?}", returns_undefined(Some(56)));
+
+    println!("{:?}", number_or_index(vec![1, 2, 3], 5));
+    println!("{:?}", number_or_index(vec![4, 122, 23], 2));
 }
