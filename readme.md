@@ -60,6 +60,7 @@ I come from a typescript background, so the majority of my understanding will co
 - Day 42 - Iterators and Enums ⚙️
 - Day 43 - Options ⚙️
 - Day 44 - Results & Error Handling ⚙️
+- Day 45 - Traits ⚙️
 
 ## Helpful stuff I found along the way
 
